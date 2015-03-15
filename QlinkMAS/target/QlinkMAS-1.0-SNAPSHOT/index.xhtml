@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Q LINK MAS System</title>
+        <h:outputStylesheet library="css" name="master.css"/>
+    </h:head>
+    <h:body>
+      <h:form id="loginfrm">
+          <p:growl id="gmsg" showDetail="true" />
+        <table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td colspan="3" class="sidecolor" height="30px">&nbsp;</td>  
+            </tr>
+            <tr>
+                <td width="20%" height="80%" class="sidecolor" align="middle" valign="top">
+                    <h:graphicImage alt="logo" url="/resources/images/logos/"></h:graphicImage>
+                </td>
+                <td colspan="2" width="80%" class="sidecolor">
+                    <div align="center" class="centerContent">
+                        <b>Welcome to Q LINK MAS</b>
+                        <br/><br/><br/><br/><br/>
+                       
+                        <div class="loginwrap">
+                        <table align="center" border="0">
+                            <tr>
+                                <td align="right">Username:</td>
+                                <td align="left"><h:inputText id="username" styleClass="inp-form"
+                                                 size="15"
+                                                 value="#{wusermb.username}"
+                                                 rendered="true"
+                                                 requiredMessage="*"/>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">Password:</td>
+                                <td align="left"><h:inputSecret id="password" styleClass="inp-form"
+                                                   size="15"
+                                                   value="#{wusermb.password}"
+                                                   rendered="true"
+                                                   requiredMessage="*"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="left">
+                                    <p:commandButton value="Login" update="loginfrm" action="#{wusermb.validatWUser()}" styleClass="button"/>
+                                </td>
+                            </tr>
+                        </table>
+                            
+                           </div>
+                        
+                    </div> <!-- centerContent-->
+                </td>
+            </tr>
+        </table>
+       </h:form>
+        <table align="center" border="0" class="footer">
+            <tr>
+                <td>Powered by Q LINK Pty (Ltd)</td>
+                <td>|</td>
+                <td><a href="#">&copy;&nbsp;Terms and Condirtion</a></td>
+                <td>|</td>
+                <td>All rights reserved</td>
+            </tr>
+        </table>
+    </h:body>
+</html>
+
+
+

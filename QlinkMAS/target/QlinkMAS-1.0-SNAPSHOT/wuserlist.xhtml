@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./template.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="content">
+        <f:view>
+            
+                <p:growl id="msg" showDetail="true"/>
+        
+                <p:dataTable id="wuserList" value="#{wusermb.wuserList}" var="item" editable="true" styleClass="table" widgetVar="wuserTable"
+                             emptyMessage="No student found with given criteria" filteredValue="#{wusermb.filterWUser}">
+                    
+                    <p:ajax event="rowEdit" listener="#{wusermb.onRowEdit(item)}" update=":mainfrm:msg" />
+                    <p:ajax event="rowEditCancel" listener="#{wusermb.onRowCancel}" update=":mainfrm:msg" />
+                    
+                    <f:facet name="header">
+                       <p:outputPanel>
+                          <h:outputText value="Search all fields:" />
+                          <p:inputText id="globalFilter" onkeyup="PF('wuserTable').filter()" style="width:150px" placeholder="Enter keyword"/>
+                       </p:outputPanel>
+                    </f:facet>
+                    
+                    <p:column headerText="Webuser ID">
+                        <h:outputText value="#{item.wuserId}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Username">
+                        <p:cellEditor>
+                            <f:facet name="output"><h:outputText value="#{item.username}"/></f:facet>
+                           <f:facet name="input"><p:inputText value="#{item.username}" id="username"/></f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                    <p:column headerText="Password">
+                        <p:cellEditor>
+                           <f:facet name="output"><h:outputText value="#{item.password}"/></f:facet>
+                           <f:facet name="input"><p:inputText value="#{item.password}" id="password"/></f:facet>
+                        </p:cellEditor>
+                    </p:column> 
+                    <p:column headerText="Webuser Role">
+                        <p:cellEditor>
+                            <f:facet name="output"><h:outputText value="#{item.wuserRole}"/></f:facet>
+                            <f:facet name="input"><p:inputText value="#{item.wuserRole}" id="wuserole"/></f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                    <p:column style="width:32px" headerText="Edit">
+                       <p:rowEditor/>
+                    </p:column>
+                </p:dataTable>
+     
+        </f:view>
+    </ui:define>
+
+</ui:composition>

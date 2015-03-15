@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./template.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html">
+
+    <ui:define name="content">
+        <f:view>
+            
+                <p:growl id="msg" showDetail="true"/>
+        
+                <p:dataTable id="memberList" value="#{editmember.membersList}" var="item" editable="true" styleClass="table" widgetVar="memTable"
+                             emptyMessage="No member found with given criteria" filteredValue="#{members.filterMembers}"  rows="50" paginator="true"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             rowStyleClass="tablecolor1">
+                    
+                    <f:facet name="header">
+                       <p:outputPanel>
+                          <h:outputText value="Search all fields:"/>
+                          <p:inputText id="globalFilter" onkeyup="PF('memTable').filter()" style="width:150px" placeholder="Enter keyword"/>
+                       </p:outputPanel>
+                    </f:facet>
+                    
+                    <p:column headerText="Member ID" filterBy="#{item.memberId}">
+                        <h:outputText value="#{item.memberId}"/>
+                    </p:column>
+                    
+                    <p:column headerText="First Name" filterBy="#{item.firstName}">
+                        <h:outputText value="#{item.firstName}"/>
+                    </p:column>
+                    <p:column headerText="Last Name" filterBy="#{item.lastName}">
+                        <h:outputText value="#{item.lastName}"/>
+                    </p:column> 
+                    <p:column headerText="Initials">
+                        <h:outputText value="#{item.initials}"/>
+                    </p:column>
+                    <p:column headerText="ID Numbeer" filterBy="#{item.idNo}">
+                        <h:outputText value="#{item.idNo}"/>
+                    </p:column>
+                    <p:column headerText="Date of Birth">
+                        <h:outputText value="#{item.dob}"><f:convertDateTime pattern="dd/MM/yyyy" /></h:outputText>
+                    </p:column>
+                    <p:column headerText="Gender" filterBy="#{item.gender}">
+                        <h:outputText value="#{item.gender}"/>
+                    </p:column>
+                    <p:column headerText="Cell Number">
+                        <h:outputText value="#{item.cellNo}"/>
+                    </p:column>
+                    <p:column headerText="Email">
+                        <h:outputText value="#{item.email}"/>
+                    </p:column>
+                    <p:column style="width:32px" headerText="Edit">
+                        <p:commandLink id="editbtn" action="#{editmember.editMember(item)}" ajax="true">  
+                           <h:graphicImage alt="edit" url="/resources/images/forms/icon_edit.gif"></h:graphicImage>
+                        </p:commandLink>
+                    </p:column>
+                    <p:column style="width:32px" headerText="Remove">
+                        <p:commandLink id="deletebtn" action="#{members.removeMember(item)}" ajax="true">  
+                           <h:graphicImage alt="Remove member" url="/resources/images/table/action_delete.gif"></h:graphicImage>
+                        </p:commandLink>
+                    </p:column>
+                    
+                </p:dataTable>
+                
+        </f:view>
+    </ui:define>
+
+</ui:composition>

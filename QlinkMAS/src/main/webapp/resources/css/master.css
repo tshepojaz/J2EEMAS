@@ -1,0 +1,158 @@
+/* 
+    Document   : master
+    Created on : 2014/08/11, 07:56:19
+    Author     : Justice Mampshika
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body{
+    font-family: monospace, sans-serif;    
+}
+
+.button{
+    font-size: 9pt;
+    font-family: monospace, sans-serif;
+}
+
+a {
+  font-size: 8pt;
+  color:#61922d; 
+  cursor: pointer;  
+}
+
+.table{
+    font-size: 9pt;
+    font-family: monospace, sans-serif;
+    margin-top:20px;
+}
+
+.tablecolor1{
+    background-color: #b4cc9b;
+}
+
+.tablecolor2{
+    background-color: #ffffff;
+}
+
+
+.centerContent {
+    font-size: 12pt;
+    padding-top:1%;
+    padding-left:1.4%;
+    width:98.2%;
+    height:35pc;
+    list-style: none;
+    background-color: #cccccc;
+    border-style: solid solid solid solid;
+    border-color: #cccccc;
+    border-width: 2px;
+    -moz-border-top-right-radius: 0px;
+    -moz-border-top-left-radius: 30px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.sidecolor {
+    background-color: #61922d
+}
+
+.Layout{
+    background-color: #FFFFFF;
+    border-color: #61922d;
+    border-width: 1px;
+}
+
+.loginwrap{
+    padding:3%;
+    width:30%;
+    
+    list-style: none;
+    background-color:transparent;
+    border-style: solid solid solid solid;
+    border-color: #61922d;
+    border-width: 1px;
+    -moz-border-top-right-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;  
+}
+
+.linkStyle {
+  font-size: 8pt;
+  color:#61922d; 
+  cursor: pointer;
+}
+
+.usernamelink{
+  padding-right: 2em;
+  font-size: 10pt;
+  color:#cccccc;   
+}
+
+.inp-form{
+	font-family: monospace, sans-serif;
+	border-style: solid solid solid solid;
+	color: #000000;
+        border-color: #61922d;
+        border-width: 1px;
+        -moz-border-top-right-radius: 5px;
+        -moz-border-top-left-radius: 5px;
+        -moz-border-radius-bottomright: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px; 
+	height: 25px;
+	padding: 4px 4px 4px 4px;
+	width: 186px;
+}
+
+.form-submit{
+        background-color: #61922d;
+	cursor: pointer;
+	display: block;
+	float: left;
+	height: 30px;
+	margin: 0 4px 0 0;
+	width: 80px;
+        font-family: monospace, sans-serif;
+	border-style: solid solid solid solid;
+	color: #FFFFFF;
+        border-color: #61922d;
+        border-width: 1px;
+        -moz-border-top-right-radius: 5px;
+        -moz-border-top-left-radius: 5px;
+        -moz-border-radius-bottomright: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px; 
+	padding: 4px 4px 4px 4px;
+        font-size: 9pt;
+        font-family: monospace, sans-serif;
+	
+}
+.footer{
+    font-size: 8pt;
+    color:#61922d;
+}
+
+
+
+
+

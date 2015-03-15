@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="content">
+        
+            <p:growl id="msg" showDetail="true"/>
+            <p:fieldset legend="Add New Member" style="margin-bottom: 20px;font-size: 9pt;" styleClass="Layout" id="fset">
+                            <h:panelGrid columns="2">
+                                
+                                <h:outputLabel value="First Name:" for="firstName" />
+                                <h:inputText id="firstName" value="#{members.firstName}" title="FirstName" styleClass="inp-form"
+                                             rendered="true" requiredMessage="First name is required"/>
+                                <h:outputLabel value="Last Name:" for="lastName" />
+                                <h:inputText id="lastName" value="#{members.lastName}" title="LastName" styleClass="inp-form"
+                                             rendered="true" requiredMessage="Last Name is required"/>
+                                <h:outputLabel value="Initials:" for="initials" />
+                                <h:inputText id="initials" value="#{members.initials}" title="Initials" styleClass="inp-form"
+                                             rendered="true" requiredMessage="Initials is required"/>
+                                <h:outputLabel value="ID Number:" for="idNo" />
+                                <h:inputText id="idNo" value="#{members.idNo}" title="IdNo" styleClass="inp-form"
+                                             rendered="true" requiredMessage="Id number is required"/>
+                                <h:outputLabel value="Date of birth:" for="dob" />
+                                <h:inputText id="dob" value="#{members.dob}" title="Dob" styleClass="inp-form"
+                                             rendered="true" requiredMessage="Date of birth is required">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:inputText>
+                                <h:outputLabel value="Gender:" for="gender" />
+                                <h:inputText id="gender" value="#{members.gender}" title="Gender" styleClass="inp-form"
+                                             rendered="true" requiredMessage="Gender is required"/>
+                                <h:outputLabel value="Cell Number:" for="cellNo" />
+                                <h:inputText id="cellNo" value="#{members.cellNo}" title="CellNo" styleClass="inp-form"/>
+                                <h:outputLabel value="Email:" for="email" />
+                                <h:inputText id="email" value="#{members.email}" title="Email" styleClass="inp-form"/>
+                                <p:commandButton value="Save" action="#{members.createMember}" styleClass="button" 
+                                                 icon=""/>
+                            </h:panelGrid>
+            </p:fieldset>
+        
+    </ui:define>
+
+</ui:composition>

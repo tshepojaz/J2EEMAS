@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Q LINK MAS System</title>
+        <h:outputStylesheet library="css" name="master.css"/>
+    </h:head>
+    <h:body>
+      <h:form id="mainfrm">
+        <table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td colspan="3" class="sidecolor" height="30px">&nbsp;</td>  
+            </tr>
+            <tr>
+                <td width="20%" height="80%" class="sidecolor" align="middle" valign="top">
+                    <h:graphicImage alt="logo" url="/resources/images/logos/"></h:graphicImage><br/><br/>
+                    
+                    <p:slideMenu style="width:94%">
+                      <p:submenu label="Members" icon="ui-icon-refresh">
+                        <p:menuitem value="Add new member" action="addmember" icon="ui-icon-disk" />
+                        <p:menuitem value="Select Member" action="memberlist" icon="ui-icon-arrowrefresh-1-w" />
+                      </p:submenu>
+                      <p:submenu label="Industrial Relation" icon="ui-icon-newwin">
+                        <p:submenu label="Incident">
+                          <p:menuitem value="Add Incident" url="http://www.prime.com.tr" />
+                          <p:menuitem value="Edit Incident" url="http://www.primefaces.org" />
+                         </p:submenu>
+                         <p:submenu label="Case">
+                          <p:menuitem value="Add Case" url="http://www.prime.com.tr" />
+                          <p:menuitem value="Edit Case" url="http://www.primefaces.org" />
+                         </p:submenu>
+                      </p:submenu>
+                      <p:separator />
+                      <p:submenu label="Admin" icon="ui-icon-extlink">
+                        <p:menuitem value="Add Web user" url="http://www.prime.com.tr" />
+                        <p:menuitem value="Select Web user" action="wuserlist"/>
+                      </p:submenu>
+                      <p:submenu label="Logout" icon="ui-icon-extlink">
+                        <p:menuitem value="Change organisation" url="http://www.prime.com.tr" />
+                        <p:menuitem value="Logout" action="#{wusermb.logout}"/>
+                      </p:submenu>
+                    </p:slideMenu>
+                </td>
+                <td colspan="2" width="80%" class="sidecolor">
+                    <div class="centerContent">
+                        <ui:insert name="content">Contents here</ui:insert>
+                    </div> <!-- centerContent-->
+                </td>
+            </tr>
+        </table>
+       </h:form>
+        <table align="center" border="0" class="footer">
+            <tr>
+                <td>Powered by Q LINK Pty (Ltd)</td>
+                <td>|</td>
+                <td><a href="#">&copy;&nbsp;Terms and Condirtion</a></td>
+                <td>|</td>
+                <td>All rights reserved</td>
+            </tr>
+        </table>
+    </h:body>
+</html>
+
+
+
